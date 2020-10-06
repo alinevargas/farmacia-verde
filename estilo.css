@@ -1,0 +1,278 @@
+
+a{
+	text-decoration:none;
+	color:#00a85a;
+	font-weight:bold;
+}
+a:hover {
+  font-weight:bold;
+  color:#00a85a;
+  text-decoration:none;
+}
+.header-menu{
+    background-color: #1aad72;
+    color: #fff;
+    font-size: 18px;
+}
+.espaco-topo{
+    margin-top: 65px;
+    color: #fff;
+}
+.logo-small {
+    color: #1aad72;
+    font-size: 50px;
+}
+
+.logo {
+    color: #1aad72;
+    font-size: 200px;
+}
+.ddown{
+	float:left;
+}
+.titulo2{
+	color:#00a85a;
+	font-size:28px;
+	font-weight:bold;
+	font-family:comfortaa;
+	margin-bottom:15px;
+}
+.titulo{
+	color:#00a85a;
+	font-size:20px;
+	font-weight:bold;
+	font-family:comfortaa;
+	margin-top:5px;
+	margin-bottom:25px;
+}
+form{
+	color:#00a85a;
+	font-family:comfortaa;
+	font-size:20px;
+	font-weight:bold;
+	margin: 0px;
+	min-height: 400px;
+	background-color: white;
+	max-width:390px;
+	padding:5px;
+}
+.option{
+	font-family:comfortaa;
+	font-size:18px;
+}
+.option:hover{
+	background-color:#5ca47a ;
+}
+.submit{
+	font-family:comfortaa;
+	color:#00a859;
+	font-size:23px;
+	font-weight:bold;	
+	background-color:#d2e28b;
+	border:none;
+	border-radius:5px;
+	height:35px;
+	width:100px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.submit:hover{
+	color:#5ca47a;
+}
+input{
+	margin-bottom:10px;
+	border-radius: 4px;
+	border: 1px solid #80c570;
+	height:30px;
+	width:220px;
+}
+.inputcheck{
+	margin-bottom:10px;
+	margin-right:0px ;
+	margin-left:-75px;
+}
+
+select{
+	margin-bottom:20px;
+	border-radius: 4px;
+	font-size:18px;
+	border: 1px solid #80c570;
+	height:30px;
+	width:220px;
+	font-family:confortaa;
+}
+.table1{
+	background-color: white;
+	width:390px;
+}
+.td1{
+	max-height:120px;
+	max-width:200px;
+	border:5px solid white;
+	padding:0px;
+	border-top:0px;
+}
+.tr{
+	width:390px;
+}
+.td2{
+	height:20px;
+	border:2px solid white;
+	padding:0px;
+	max-width:185px;
+	color:#00a859;
+	font-size:20px;
+}
+.email{
+	font-size:18px;
+	max-width:230px;
+}
+.tdemail{
+	height:20px;
+	border:2px solid white;
+	padding:0px;
+	max-width:230px;
+	color:#00a859;
+	font-size:20px;
+}
+.tdnome{
+	height:20px;
+	border:2px solid white;
+	padding:0px;
+	max-width:140px;
+	color:#00a859;
+	font-size:20px;
+}
+.td3top{
+	border: 2,5px solid #d2e28b;
+	font-weight: 500;
+	background-color: #d2e28b;
+	min-width: 185px;
+	max-width: 185px;
+	border-top: white;
+	max-height: 30px;
+    padding: 0px;
+	color: #00a859;
+	font-size:20px;
+	
+}
+.tdtopusu{
+	border: 5px solid #d2e28b;
+	font-weight: 500;
+	background-color: #d2e28b;
+	border-top: white;
+	max-height: 30px;
+    padding: 0px;
+	color: #00a859;
+	font-size:20px;
+	
+}
+.top{
+	margin-top:10px;
+}
+.menu{
+	width:195px;
+	border:10px solid white;
+	padding:0px;
+	font-family:comfortaa;	
+	font-size:20px;
+
+	color: #00a859;
+}
+
+.menu2{
+	border:10px solid white;
+	padding:0px;
+	font-family:comfortaa;	
+	font-size:20px;
+	font-weight:bold;
+	color: #00a859;
+}
+td{
+	font-family:comfortaa;	
+	font-size:22px;
+}
+td:hover{
+	font-family:comfortaa;	
+	font-size:22px;
+	color: #00a859;
+}
+.nome{
+	background-color: white;
+	width:200px;
+	margin:0;
+}
+.img{
+	max-height: 300px;
+	max-width: 200px;
+	align-items: center;
+	width:100%;
+}
+
+.imgcatalogo{
+	max-height: 150px;
+	max-width: 150px;
+	align-items: center;
+	width:100%;
+}
+
+
+.planta{
+	color:#00a85a;
+	font-size:21px;
+	font-family:comfortaa;
+	min-height: 400px;
+	max-width:390px;
+	min-width:390px;
+	width:100%;
+	background-color: white;
+	padding:5px;
+}
+
+.botao{
+	border:none;
+	border-radius:3px;
+	background-color:#d2e28b;
+	color:#00a85a;
+	font-size:20px;
+	font-family:comfortaa;
+	margin:10px 2px;
+	text-decoration:none
+}
+.botao:hover{
+	font-weight:bold;
+	color:#00a85a;
+	text-decoration:none;
+}
+
+.logomenu{
+	width:70px;
+	height:45px;
+	margin-top:0px;
+}
+.farmacia{
+	height:45px;
+}
+
+.fundo1{
+	background-color:#80c570;
+	width:100%;
+	min-height: 400px;
+}
+
+.form{
+	background-color: white;
+	width:370px;
+}
+
+.tamanho{
+	width:390;
+}
+
+.align{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+}
