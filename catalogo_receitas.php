@@ -76,7 +76,7 @@
 				<?php
 					if(isset($_COOKIE["logado"] ) ){ 
 						echo $botaoinicio; 
-						echo $botaoform_r;
+						echo "<button  class='botao' onclick='window.location.href = 'form_receita.php';'>Adicionar receita</button>";
 					}else{
 						echo $botaoinicio;
 					}

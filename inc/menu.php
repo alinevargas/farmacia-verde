@@ -30,7 +30,7 @@
 <nav class="navbar navbar-expand-lg navbar-light " style="margin:0px;">
     
       <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="./index.php">
         <img class="logomenu"src="imagens/logo.jpg" alt="Logo"/>
         <img class="farmacia"src="imagens/titulo.jpg" alt="Nome da página"/>
         </a>  
