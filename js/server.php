@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             include "../classes/planta.class.php";
 
 			$planta = new Planta();
-			$array=$planta->mostrar();
+			$array=$planta->mostrar2();
 
 			foreach($array as $a){
 				$id=$a->getId_p();

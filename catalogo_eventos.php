@@ -73,10 +73,10 @@
 			<div class="tamanho align">
 			<?php
 				if(isset($_COOKIE["logado"] ) ){ 
-					echo $botaoinicio; 
-					echo $botaoform_e;
+					echo "<a  class='botao' href = 'index.php';'>Voltar ao início</a>"; 
+					echo "<a  class='botao' href = 'form_evento.php';'>Adicionar evento</a>";	
 				}else{
-					echo $botaoinicio;
+					echo "<a  class='botao' href = 'index.php';'>Voltar ao início</a>"; 
 				}
 				?>		
 			</div>

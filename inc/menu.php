@@ -17,7 +17,6 @@
 	text-decoration:none;
 	font-weight:bold;
 	font-family:comfortaa;
-  margin-top:5px;
   font-size:22px;
   margin-right:15px;
 }
@@ -30,8 +29,8 @@
 <nav class="navbar navbar-expand-lg navbar-light " style="margin:0px;">
     
       <div class="navbar-header">
-      <a class="navbar-brand" href="./index.php">
-        <img class="logomenu"src="imagens/logo.jpg" alt="Logo"/>
+      <a class="navbar-brand" href=".'/index.php">
+        <img class="logomenu"src="imagens/logo.png" alt="Logo"/>
         <img class="farmacia"src="imagens/titulo.jpg" alt="Nome da página"/>
         </a>  
         <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse"data-target="#navbar" >
@@ -88,10 +87,3 @@
   </nav>
 </head>
 <body>
-<?php
-  $botaoinicio="<button  class='botao' onclick='window.location.href = 'index.php';'>Voltar ao início</button>";
-  $botaoform_e="<button  class='botao' onclick='window.location.href = 'form_evento.php';'>Adicionar evento</button>";	
-  $botaoform_p="<button  class='botao' onclick='window.location.href = 'form_planta.php';'>Adicionar planta</button>";	
-  $botaoform_r="<button  class='botao' onclick='window.location.href = 'form_receita.php';'>Adicionar receita</button>";	
-
-?>

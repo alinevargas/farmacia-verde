@@ -75,14 +75,13 @@
 			<div class="tamanho align top">
 				<?php
 					if(isset($_COOKIE["logado"] ) ){ 
-						echo $botaoinicio; 
-						echo "<button  class='botao' onclick='window.location.href = 'form_receita.php';'>Adicionar receita</button>";
+						echo "<a  class='botao' href = 'index.php';'>Voltar ao início</a>"; 
+						echo "<a  class='botao' href = 'form_receita.php';'>Adicionar receita</a>";
 					}else{
-						echo $botaoinicio;
+						echo "<a  class='botao' href = 'index.php';'>Voltar ao início</a>";
 					}
 				?>
 			</div>
 		</div>
 	</div>	
-</body>
-</html>
+</body></html>

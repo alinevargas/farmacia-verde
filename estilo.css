@@ -15,7 +15,7 @@ a:hover {
     font-size: 18px;
 }
 .espaco-topo{
-    margin-top: 65px;
+    margin-top: 0px;
     color: #fff;
 }
 .logo-small {
@@ -32,7 +32,7 @@ a:hover {
 }
 .titulo2{
 	color:#00a85a;
-	font-size:28px;
+	font-size:18px;
 	font-weight:bold;
 	font-family:comfortaa;
 	margin-bottom:15px;
@@ -247,9 +247,9 @@ td:hover{
 }
 
 .logomenu{
-	width:70px;
-	height:45px;
-	margin-top:0px;
+	width:100px;
+	height:100px;
+	margin-top:-10px;
 }
 .farmacia{
 	height:45px;

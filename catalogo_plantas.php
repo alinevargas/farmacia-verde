@@ -76,10 +76,10 @@
 
 				?><?php
 				if(isset($_COOKIE["logado"] ) ){ 
-					echo $botaoinicio; 
-					echo $botaoform_p;
+					echo  "<a  class='botao' href = 'index.php';'>Voltar ao início</a>"; 
+					echo "<a  class='botao' href = 'form_planta.php';'>Adicionar planta</a>";
 				}else{
-					echo $botaoinicio;
+					echo "<a  class='botao' href = 'index.php';'>Voltar ao início</a>";
 				}
 			?>
 			</div>	
