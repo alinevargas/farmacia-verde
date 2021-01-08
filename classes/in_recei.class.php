@@ -1,18 +1,18 @@
 <?php
-class Bene_recei{
-    private $bene;
+class In_recei{
+    private $in;
     private $nome ;
-    private $id_b;
+    private $id_d;
     private $id_r;
     
     private $conn;
     private $stmt;
     
-	public function getBene(){
-        return $this->bene;
+	public function getIn(){
+        return $this->in;
     }
-    public function setBene($bene){
-        $this->bene=$bene;
+    public function setIn($in){
+        $this->in=$in;
     }
     public function getNome(){
         return $this->nome;
@@ -20,11 +20,11 @@ class Bene_recei{
     public function setNome($nome){
         $this->nome=$nome;
     }
-    public function getId_b(){
-        return $this->id_b;
+    public function getId_d(){
+        return $this->id_d;
     }
-    public function setId_b($id){
-        $this->id_b=$id;
+    public function setId_d($id){
+        $this->id_d=$id;
     }
     public function getId_r(){
         return $this->id_r;
@@ -46,7 +46,7 @@ class Bene_recei{
         }
     }
 
-    public function adicionarbeneficio(){
+    public function adicionarindicacao(){
         $retorno2 = false;
         try{
             $query = " SELECT id_r  FROM receita  WHERE nome like :nome " ;
@@ -56,12 +56,12 @@ class Bene_recei{
             $arr = $this->stmt->fetch();
             $id = $arr["id_r"];
          
-             $sql = " INSERT INTO bene_recei " .
-                " (id_r,id_b) " . 
-                " VALUES (:id_r, :bene)";
+             $sql = " INSERT INTO in_recei " .
+                " (id_r,id_d) " . 
+                " VALUES (:id_r, :in)";
                         
             $this->stmt= $this->conn->prepare($sql);
-            $this->stmt->bindValue(':bene', $this->bene, PDO::PARAM_INT);
+            $this->stmt->bindValue(':in', $this->in, PDO::PARAM_INT);
             $this->stmt->bindValue(':id_r', $id, PDO::PARAM_INT);            
                    
             if($this->stmt->execute()){
@@ -73,7 +73,7 @@ class Bene_recei{
             return $retorno2;        
     }
 
-    public function atualizarbeneficio(){
+    public function atualizarindicacao(){
         $retorno2 = false;
         try{
             $query = " SELECT id_r  FROM receita  WHERE nome like :nome " ;
@@ -83,12 +83,12 @@ class Bene_recei{
             $arr = $this->stmt->fetch();
             $id = $arr["id_r"];
          
-            $sql =  " UPDATE bene_recei SET "  .
-            " id_r = :id_r, id_b = :bene" .            
+            $sql =  " UPDATE in_recei SET "  .
+            " id_r = :id_r, id_d = :in" .            
                     " WHERE id_r = :id_r ";    
                         
             $this->stmt= $this->conn->prepare($sql);
-            $this->stmt->bindValue(':bene', $this->bene, PDO::PARAM_INT);
+            $this->stmt->bindValue(':in', $this->in, PDO::PARAM_INT);
             $this->stmt->bindValue(':id_r', $id, PDO::PARAM_INT);            
                    
             if($this->stmt->execute()){
@@ -102,7 +102,7 @@ class Bene_recei{
     public function excluirr(){
         $retorno = false;
         try{
-            $sql = " DELETE FROM bene_recei " .
+            $sql = " DELETE FROM in_recei " .
                 " WHERE id_r = :id_r ";
 
             $this->stmt= $this->conn->prepare($sql);
@@ -122,12 +122,12 @@ class Bene_recei{
     public function excluirb(){
         $retorno = false;
         try{
-            $sql = " DELETE FROM bene_recei " .
-                " WHERE id_b = :id_b ";
+            $sql = " DELETE FROM in_recei " .
+                " WHERE id_d = :id_d ";
 
             $this->stmt= $this->conn->prepare($sql);
 
-            $this->stmt->bindValue(':id_b', $this->id_b, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_d', $this->id_d, PDO::PARAM_INT);
 
             if($this->stmt->execute()){
                 $retorno = true;

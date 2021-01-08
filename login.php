@@ -12,7 +12,7 @@
 			<label> Senha:</label>
 			<input type="password" name="senha"/><br>
 			<a>Esqueceu a senha</a>
-			<input class="submit" align="center"type="submit" value="Login"/>
+			<input class="submit alignsubmit" align="center"type="submit" value="Login"/>
 		</div>
 	</form>	
 	</div>

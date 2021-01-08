@@ -1,12 +1,11 @@
 
 a{
 	text-decoration:none;
-	color:#00a85a;
-	font-weight:bold;
+	color:#799E68;
 }
 a:hover {
   font-weight:bold;
-  color:#00a85a;
+  color:#799E68;
   text-decoration:none;
 }
 .header-menu{
@@ -31,24 +30,23 @@ a:hover {
 	float:left;
 }
 .titulo2{
-	color:#00a85a;
-	font-size:18px;
+	color:#799E68;
 	font-weight:bold;
-	font-family:comfortaa;
-	margin-bottom:15px;
+	font-family:eczar semibold;
+	font-size:22px;
 }
 .titulo{
-	color:#00a85a;
+	color:#799E68;
 	font-size:20px;
 	font-weight:bold;
-	font-family:comfortaa;
+		font-family:eczar semibold;
 	margin-top:5px;
 	margin-bottom:25px;
 }
 form{
-	color:#00a85a;
-	font-family:comfortaa;
-	font-size:20px;
+	color:#799E68;
+		font-family:eczar semibold;
+	font-size:16px;
 	font-weight:bold;
 	margin: 0px;
 	min-height: 400px;
@@ -57,18 +55,18 @@ form{
 	padding:5px;
 }
 .option{
-	font-family:comfortaa;
+		font-family:eczar semibold;
 	font-size:18px;
 }
 .option:hover{
 	background-color:#5ca47a ;
 }
 .submit{
-	font-family:comfortaa;
-	color:#00a859;
-	font-size:23px;
+		font-family:eczar semibold;
+	color:white;
+	font-size:20px;
 	font-weight:bold;	
-	background-color:#d2e28b;
+	background-color:#799E68;
 	border:none;
 	border-radius:5px;
 	height:35px;
@@ -77,8 +75,15 @@ form{
 	justify-content: center;
 	align-items: center;
 }
+.alignsubmit{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	
+}
 .submit:hover{
-	color:#5ca47a;
+	color:white;
+	font-weight:bold ;
 }
 input{
 	margin-bottom:10px;
@@ -121,8 +126,9 @@ select{
 	border:2px solid white;
 	padding:0px;
 	max-width:185px;
-	color:#00a859;
-	font-size:20px;
+	color:#799E68;
+	font-size:18px;
+	font-weight:normal;
 }
 .email{
 	font-size:18px;
@@ -133,7 +139,7 @@ select{
 	border:2px solid white;
 	padding:0px;
 	max-width:230px;
-	color:#00a859;
+	color:#799E68;
 	font-size:20px;
 }
 .tdnome{
@@ -141,21 +147,22 @@ select{
 	border:2px solid white;
 	padding:0px;
 	max-width:140px;
-	color:#00a859;
+	color:#799E68;
 	font-size:20px;
 }
 .td3top{
-	border: 2,5px solid #d2e28b;
+	border: 2,5px solid #799E68;
 	font-weight: 500;
-	background-color: #d2e28b;
+	background-color: #799E68;
 	min-width: 185px;
 	max-width: 185px;
 	border-top: white;
+	border-top:0px;
 	max-height: 30px;
     padding: 0px;
-	color: #00a859;
-	font-size:20px;
-	
+	color: white;
+	font-size:18px;
+	font-weight:bold;
 }
 .tdtopusu{
 	border: 5px solid #d2e28b;
@@ -164,7 +171,7 @@ select{
 	border-top: white;
 	max-height: 30px;
     padding: 0px;
-	color: #00a859;
+	color: #799E68;
 	font-size:20px;
 	
 }
@@ -175,28 +182,28 @@ select{
 	width:195px;
 	border:10px solid white;
 	padding:0px;
-	font-family:comfortaa;	
+		font-family:eczar semibold;	
 	font-size:20px;
 
-	color: #00a859;
+	color: #799E68;
 }
 
 .menu2{
 	border:10px solid white;
 	padding:0px;
-	font-family:comfortaa;	
+		font-family:eczar semibold;	
 	font-size:20px;
 	font-weight:bold;
-	color: #00a859;
+	color: #799E68;
 }
 td{
-	font-family:comfortaa;	
+		font-family:eczar semibold;	
 	font-size:22px;
 }
 td:hover{
-	font-family:comfortaa;	
-	font-size:22px;
-	color: #00a859;
+		font-family:eczar semibold;	
+	font-size:20px;
+	font-weight:bold;
 }
 .nome{
 	background-color: white;
@@ -219,9 +226,9 @@ td:hover{
 
 
 .planta{
-	color:#00a85a;
+	color:#799E68;
 	font-size:21px;
-	font-family:comfortaa;
+		font-family:eczar semibold;
 	min-height: 400px;
 	max-width:390px;
 	min-width:390px;
@@ -233,26 +240,35 @@ td:hover{
 .botao{
 	border:none;
 	border-radius:3px;
-	background-color:#d2e28b;
-	color:#00a85a;
+	background-color:#799E68;
+	color:white;
 	font-size:20px;
-	font-family:comfortaa;
+		font-family:eczar semibold;
+	padding:5px;
 	margin:10px 2px;
-	text-decoration:none
+	text-decoration:none;
+	font-weight:normal
 }
 .botao:hover{
 	font-weight:bold;
-	color:#00a85a;
+	color:white;
 	text-decoration:none;
 }
 
 .logomenu{
-	width:100px;
-	height:100px;
+	width:70px;
+	height:70px;
 	margin-top:-10px;
 }
 .farmacia{
-	height:45px;
+	font-size:20px;
+	color:#799E68;
+	font-family:eczar semibold;
+	text-decoration:none;
+}
+.nomefarmacia{
+	max-height:85px;
+	text-align:center;
 }
 
 .fundo1{

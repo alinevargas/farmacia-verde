@@ -13,26 +13,28 @@
 
 <style>
 .fixed{
-	color:#5ca47a;
+	color:#799E68;
 	text-decoration:none;
-	font-weight:bold;
-	font-family:comfortaa;
-  font-size:22px;
+	font-family:eczar semibold;
+  font-size:20px;
   margin-right:15px;
 }
 .fixed:hover{
-	color:#00a85a;
+	font-weight:bold;
 }
 </style>
 	<title> Farmácia Verde </title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light " style="margin:0px;">
+<nav class="navbar navbar-expand-lg navbar-light " style="margin-top:0px;">
     
       <div class="navbar-header">
       <a class="navbar-brand" href=".'/index.php">
         <img class="logomenu"src="imagens/logo.png" alt="Logo"/>
-        <img class="farmacia"src="imagens/titulo.jpg" alt="Nome da página"/>
-        </a>  
+       
+          <a href="" class="farmacia">Farmácia Verde </a>
+          <a href="" class="farmacia" >Cuidado Natural </a>
+       
+      </a>  
         <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse"data-target="#navbar" >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +61,7 @@
                 }
                   echo "
                   <li class='nav-item active'>
-                    <a style='text-decoration:none;'class='fixed'href='catalogo_beneficio.php' >Beneficio </a>
+                    <a style='text-decoration:none;'class='fixed'href='catalogo_indicacao.php' >Indicação </a>
                   </li>
                   <li class='nav-item active'>
                     <a style='text-decoration:none;'class='fixed'href='form_imagem.php'>Imagens </a>  

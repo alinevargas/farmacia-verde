@@ -1,18 +1,18 @@
 <?php
-class Bene_planta{
-    private $bene;
+class In_planta{
+    private $in;
     private $comum ;
-    private $Id_b ;
+    private $id_d ;
     private $Id_p ;
     
     private $conn;
     private $stmt;
     
-	public function getBene(){
-       return $this->bene;
+	public function getnI(){
+       return $this->in;
    }
-   public function setBene($bene){
-       $this->bene=$bene;
+   public function setIn($in){
+       $this->in=$in;
    }
    public function getComum(){
        return $this->comum;
@@ -20,11 +20,11 @@ class Bene_planta{
    public function setComum($comum){
        $this->comum=$comum;
    }
-   public function getId_b(){
-        return $this->id_b;
+   public function getId_d(){
+        return $this->id_d;
     }
-    public function setId_b($id_b){
-         $this->id_b=$id_b;
+    public function setId_d($id_d){
+         $this->id_d=$id_d;
     }
     public function getId_p(){
         return $this->id_p;
@@ -45,7 +45,7 @@ class Bene_planta{
         }
     }
 
-    public function adicionarbeneficio(){
+    public function adicionarindicacao(){
         $retorno2 = false;
         try{
             $query = " SELECT id_p  FROM planta  WHERE comum like :comum " ;
@@ -55,12 +55,12 @@ class Bene_planta{
             $arr = $this->stmt->fetch();
             $id = $arr["id_p"];
          
-             $sql = " INSERT INTO bene_planta " .
-                " (id_p,id_b) " . 
-                " VALUES (:id_p, :bene)";
+             $sql = " INSERT INTO in_planta " .
+                " (id_p,id_d) " . 
+                " VALUES (:id_p, :in)";
                         
             $this->stmt= $this->conn->prepare($sql);
-            $this->stmt->bindValue(':bene', $this->bene, PDO::PARAM_INT);
+            $this->stmt->bindValue(':in', $this->in, PDO::PARAM_INT);
             $this->stmt->bindValue(':id_p', $id, PDO::PARAM_INT);            
                    
             if($this->stmt->execute()){
@@ -75,7 +75,7 @@ class Bene_planta{
     public function excluirp(){
         $retorno = false;
         try{
-            $sql = " DELETE FROM bene_planta " .
+            $sql = " DELETE FROM in_planta " .
                 " WHERE id_p = :id_p ";
 
             $this->stmt= $this->conn->prepare($sql);
@@ -95,12 +95,12 @@ class Bene_planta{
     public function excluirb(){
         $retorno = false;
         try{
-            $sql = " DELETE FROM bene_planta " .
-                " WHERE id_b = :id_b ";
+            $sql = " DELETE FROM in_planta " .
+                " WHERE id_d = :id_d ";
 
             $this->stmt= $this->conn->prepare($sql);
 
-            $this->stmt->bindValue(':id_b', $this->id_b, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_d', $this->id_d, PDO::PARAM_INT);
 
             if($this->stmt->execute()){
                 $retorno = true;

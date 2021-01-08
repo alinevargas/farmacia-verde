@@ -1,16 +1,16 @@
 <?php
-	class Beneficio{
-	private $id_b;
+	class Indicacao{
+	private $id_d;
     private $descricao;
     
     private $conn;
     private $stmt;
 
-	public function getId_b(){
-       return $this->id_b;
+	public function getId_d(){
+       return $this->id_d;
    }
-   public function setId_b($valor){
-       $this->id_b=$valor;
+   public function setId_d($valor){
+       $this->id_d=$valor;
    }
 	public function getDescricao(){
        return $this->descricao;
@@ -34,7 +34,7 @@
     public function adicionar(){
         $retorno = false;
         try{
-            $sql = " INSERT INTO beneficio " .
+            $sql = " INSERT INTO indicacao " .
                 " (descricao) " . 
                 " VALUES (:descricao)";                    
             $this->stmt= $this->conn->prepare($sql);
@@ -52,9 +52,9 @@
     }
 
     public function listar($pesquisa){  
-        $beneficios= array();
+        $indicacaos= array();
         try{           
-            $sql = " SELECT * FROM beneficio" .
+            $sql = " SELECT * FROM indicacao" .
                     " ORDER BY descricao";
 
             $this->stmt= $this->conn->prepare($sql);
@@ -62,9 +62,9 @@
             
             if($this->stmt->execute()){                
             
-                $beneficios= $this->stmt->fetchAll(PDO::FETCH_CLASS,"beneficio"); 
+                $indicacaos= $this->stmt->fetchAll(PDO::FETCH_CLASS,"indicacao"); 
             }            
-            return $beneficios;                    
+            return $indicacaos;                    
         } catch(PDOException $erro) {
             
             echo $erro->getMessage();                 
@@ -72,42 +72,42 @@
     }
 	
     public function buscar(){
-	$bene = null;
+	$in = null;
         try{
-            $sql = " SELECT * FROM beneficio " .
-                " WHERE id_b = :id_b";
+            $sql = " SELECT * FROM indicacao " .
+                " WHERE id_d = :id_d";
 
             $this->stmt= $this->conn->prepare($sql);
  
-            $this->stmt->bindValue(':id_b', $this->id_b, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_d', $this->id_d, PDO::PARAM_INT);
 
             if($this->stmt->execute()){              
-			   $beneficios = $this->stmt->fetchAll(PDO::FETCH_CLASS,"beneficio");  
+			   $indicacaos = $this->stmt->fetchAll(PDO::FETCH_CLASS,"indicacao");  
                 
-                if(count($beneficios)>0){                
-                    $bene = $beneficios[0];
+                if(count($indicacaos)>0){                
+                    $in = $indicacaos[0];
                 }else{
-                    $bene = new Beneficio();
+                    $in = new indicacao();
                 }
             }        
         } catch(PDOException $erro) {
-            $bene = new Beneficio();
+            $in = new indicacao();
  
             echo $erro->getMessage();                    
         }
-            return $bene;  
+            return $in;  
     }
 	public function atualizar(){
         $retorno = false;
         try{
-            $sql =  " UPDATE beneficio SET "  .
+            $sql =  " UPDATE indicacao SET "  .
                     " descricao = :descricao" .               
-                    " WHERE id_b = :id_b ";
+                    " WHERE id_d = :id_d ";
       
             $this->stmt= $this->conn->prepare($sql);
 
                $this->stmt->bindValue(':descricao', $this->descricao, PDO::PARAM_STR);
-               $this->stmt->bindValue(':id_b', $this->id_b, PDO::PARAM_INT);
+               $this->stmt->bindValue(':id_d', $this->id_d, PDO::PARAM_INT);
 			   
             if($this->stmt->execute()){
                 $retorno = true;
@@ -123,12 +123,12 @@
 	public function excluir(){
         $retorno = false;
         try{
-            $sql = " DELETE FROM beneficio " .
-                " WHERE id_b = :id_b";
+            $sql = " DELETE FROM indicacao " .
+                " WHERE id_d = :id_d";
 
             $this->stmt= $this->conn->prepare($sql);
 
-            $this->stmt->bindValue(':id_b', $this->id_b, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_d', $this->id_d, PDO::PARAM_INT);
 
             if($this->stmt->execute()){
                 $retorno = true;
@@ -141,43 +141,43 @@
                 
     }
     public function mostrartudo($id){
-        $beneficios = array();  
+        $indicacaos = array();  
         try{         
-            $sql = " SELECT b.id_b ,b.descricao " .
-            " FROM bene_planta as e " .
+            $sql = " SELECT d.id_d ,d.descricao " .
+            " FROM in_planta as e " .
             " INNER JOIN planta as p " .
             " ON e.id_p like ? " .
-            " INNER JOIN beneficio as b " .
-            " ON e.id_b = b.id_b".
-            " GROUP by b.descricao";
+            " INNER JOIN indicacao as d " .
+            " ON e.id_d = d.id_d".
+            " GROUP by d.descricao";
             
             $this->stmt= $this->conn->prepare($sql); 
             
             if($this->stmt->execute([$id])){               
-                $beneficios = $this->stmt->fetchAll(PDO::FETCH_CLASS,"beneficio");                  
+                $indicacaos = $this->stmt->fetchAll(PDO::FETCH_CLASS,"indicacao");                  
             }                      
-            return $beneficios;                     
+            return $indicacaos;                     
           } catch(PDOException $erro) {
               echo $erro->getMessage();                 
           }
     }
     public function mostrartudo2($id){
-        $beneficios = array();  
+        $indicacaos = array();  
         try{         
-            $sql = " SELECT b.id_b ,b.descricao " .
-            " FROM bene_recei as e " .
+            $sql = " SELECT d.id_d ,d.descricao " .
+            " FROM in_recei as e " .
             " INNER JOIN receita as r " .
             " ON e.id_r like ? " .
-            " INNER JOIN beneficio as b " .
-            " ON e.id_b = b.id_b".
-            " GROUP by b.descricao";
+            " INNER JOIN indicacao as d " .
+            " ON e.id_d = d.id_d".
+            " GROUP by d.descricao";
             
             $this->stmt= $this->conn->prepare($sql); 
             
             if($this->stmt->execute([$id])){               
-                $beneficios = $this->stmt->fetchAll(PDO::FETCH_CLASS,"beneficio");                  
+                $indicacaos = $this->stmt->fetchAll(PDO::FETCH_CLASS,"indicacao");                  
             }                      
-            return $beneficios;                     
+            return $indicacaos;                     
           } catch(PDOException $erro) {
               echo $erro->getMessage();                 
           }

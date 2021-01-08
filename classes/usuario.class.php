@@ -1,12 +1,12 @@
 <?php
 class Usuario{
 	private $id_u;
+    private $tipo;
 	private $nome;
-	private $sobrenome;
+    private $cpf;
 	private $email;
     private $senha;
-    private $cpf;
-    private $tipo;
+	private $sobrenome;
 
     private $conn;
     private $stmt;
@@ -20,15 +20,15 @@ class Usuario{
 	public function getNome(){
        return $this->nome;
    }
-   public function setNome($nome){
+   public function getTipo(){
+    return $this->tipo;
+    }
+    public function setTipo($tipo){
+       $this->tipo=$tipo;
+    }public function setNome($nome){
        $this->nome=$nome;
    }
-   public function getSobrenome(){
-       return $this->sobrenome;
-   }
-   public function setSobrenome($sobrenome){
-       $this->sobrenome=$sobrenome;
-   } 
+
    public function getEmail(){
        return $this->email;
    }
@@ -47,13 +47,13 @@ class Usuario{
     public function setCpf($cpf){
        $this->cpf=$cpf;
     }
-   public function getTipo(){
-    return $this->tipo;
+   
+    public function getSobrenome(){
+        return $this->sobrenome;
     }
-    public function setTipo($tipo){
-       $this->tipo=$tipo;
-    }
-   public function __construct() {
+    public function setSobrenome($sobrenome){
+        $this->sobrenome=$sobrenome;
+    }    public function __construct() {
         try {
             include "inc/conexao.inc.php";
 
@@ -68,16 +68,16 @@ class Usuario{
         $retorno = false;
         try{
             $sql = " INSERT INTO usuario " .
-                " (nome,sobrenome,email,senha,cpf,tipo) " . 
-                " VALUES (:nome, :sobrenome, :email, :senha, :cpf, :tipo)";                    
+                " (tipo,nome,cpf,email,senha,sobrenome) " . 
+                " VALUES (:tipo,:nome,:cpf, :email, :senha, :sobrenome)";                    
             $this->stmt= $this->conn->prepare($sql);
     
+            $this->stmt->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);            
             $this->stmt->bindValue(':nome', $this->nome, PDO::PARAM_STR);
-            $this->stmt->bindValue(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
+            $this->stmt->bindValue(':cpf', $this->cpf, PDO::PARAM_STR);
 			$this->stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
             $this->stmt->bindValue(':senha', $this->senha, PDO::PARAM_STR);
-            $this->stmt->bindValue(':cpf', $this->cpf, PDO::PARAM_STR);
-            $this->stmt->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);            
+            $this->stmt->bindValue(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
 			
             if($this->stmt->execute()){
                 $retorno = true;
@@ -92,18 +92,18 @@ class Usuario{
         $retorno = false;
         try{
             $sql =  " UPDATE usuario SET "  .
-            " nome = :nome,sobrenome = :sobrenome, email = :email, cpf = :cpf, tipo = :tipo" .            
+            " tipo = :tipo, nome = :nome,cpf = :cpf, email = :email, senha = :senha, sobrenome = :sobrenome" .            
                     " WHERE id_u = :id_u ";            
          
             $this->stmt= $this->conn->prepare($sql);
      
+            $this->stmt->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);            
             $this->stmt->bindValue(':nome', $this->nome, PDO::PARAM_STR);
-            $this->stmt->bindValue(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
-            $this->stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
             $this->stmt->bindValue(':cpf', $this->cpf, PDO::PARAM_STR);
-            $this->stmt->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
-            $this->stmt->bindValue(':id_u', $this->id_u, PDO::PARAM_INT);
-    
+			$this->stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+            $this->stmt->bindValue(':senha', $this->senha, PDO::PARAM_STR);
+            $this->stmt->bindValue(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
+			
             if($this->stmt->execute()){
                 $retorno = true;
             }        

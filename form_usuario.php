@@ -44,7 +44,7 @@
 					<?php
 						echo$senha;
 					?>
-					
+					<br>
 					<button type="submit" class="botao">Cadastrar</button>
 				</div>
 			</form>
