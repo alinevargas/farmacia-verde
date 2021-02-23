@@ -27,46 +27,46 @@
 						<input type="text" name="cientifico" id="cientifico"value="<?= isset($pla) ? $pla->getCientifico() : ""; ?>"><br>
 					<label>Contradições</label>
 					<input type="text" name="contra" id="contra" value="<?= isset($pla) ? $pla->getContra() : ""; ?>"><br>
-					<label>Benefícios </label><br>
+					<label>Indicações </label><br>
 					<?php
-						include_once "classes/beneficio.class.php";
-						include_once "classes/bene_planta.class.php";
+						include_once "classes/indicacao.class.php";
+						include_once "classes/in_planta.class.php";
 
-						$bene= new Beneficio();
-						$beneficio = array();
+						$in= new Indicacao();
+						$indicacao = array();
 						$pesquisa = "";
-						$beneficio = $bene->listar($pesquisa);
+						$indicacao = $in->listar($pesquisa);
 						$c=1;
 						
 						if($_GET){		
-							$beneficios= array();
-							$beneficios = $bene->mostrartudo($id);
-
+							$indicacaos= array();
+							$indicacaos = $in->mostrartudo($id);
 							$array=array();
-							foreach($beneficios as $be){
-								$id= $be->getId_b();
-								$d= $be->getDescricao();
-							
+							foreach($indicacaos as $i){
+								$id= $i->getId_d();
+								$d= $i->getDescricao();
 								echo "<label class='form-check-label'>
-								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'bene".$c."'  id='".$id."' value = ".$id." checked>".$d."
+								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'in".$c."'  id='".$id."' value = ".$id." checked>".$d."
 								</label><br>";	
-								$array[$c]=$be->getDescricao();
+								$array[$c]=$i->getDescricao();
 								$c++;
 							}
-							foreach($beneficio as $bb){
-								$idb=$bb->getId_b();
-								$db=$bb->getDescricao();
+							foreach($indicacao as $ind){
+								$idb=$ind->getId_d();
+								$db=$ind->getDescricao();
+								
+
 								if(array_search($db,$array) == false){
-									echo "<input class='inputcheck' type = 'checkbox' name = 'bene".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+									echo "<input class='inputcheck' type = 'checkbox' name = 'in".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
 									$c++;
 								}
 							}
 						}else{
-							if(!empty($beneficio)){
-								foreach($beneficio as $bb){
-									$idb=$bb->getId_b();
-									$db=$bb->getDescricao();
-									echo "<input class='inputcheck' type = 'checkbox' name = 'bene".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+							if(!empty($indicacao)){
+								foreach($indicacao as $ind){
+									$idb=$ind->getId_d();
+									$db=$ind->getDescricao();
+									echo "<input class='inputcheck' type = 'checkbox' name = 'in".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
 									$c++;
 								}
 							}

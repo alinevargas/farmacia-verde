@@ -10,7 +10,7 @@
 				<tr>
 				<?php
 					include_once 'classes/receita.class.php';
-					include_once 'classes/bene_recei.class.php';
+					include_once 'classes/in_recei.class.php';
 					include_once 'classes/imagem.class.php';
 					
 					$receita = new Receita();

@@ -29,7 +29,7 @@
 					<label>Final:</label>
 					<input type="text" name="fim" id="fim" value="<?= isset($eve) ? $eve->getFim() : ""; ?>"><br>
 					<label>Descrição:</label>
-					<input type="text" name="descricao" id="descricao" value="<?= isset($eve) ? $eve->getDescricao() : ""; ?>"><br>
+					<textarea type="text" name="descricao" id="descricao" value="<?= isset($eve) ? $eve->getDescricao() : ""; ?>"></textarea><br>
 					<button type="submit" class="botao">Cadastrar</button>
 				</div>	
 			</form>

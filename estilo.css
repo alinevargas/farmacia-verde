@@ -33,7 +33,7 @@ a:hover {
 	color:#799E68;
 	font-weight:bold;
 	font-family:eczar semibold;
-	font-size:22px;
+	font-size:20px;
 }
 .titulo{
 	color:#799E68;
@@ -226,8 +226,8 @@ td:hover{
 
 
 .planta{
-	color:#799E68;
-	font-size:21px;
+	color: #799E68;
+	font-size:20px;
 		font-family:eczar semibold;
 	min-height: 400px;
 	max-width:390px;
@@ -291,4 +291,7 @@ td:hover{
 	justify-content: center;
 	align-items: center;
 	width:100%;
+}
+.texto{
+	font-size:18px;
 }
