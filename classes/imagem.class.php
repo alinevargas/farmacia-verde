@@ -1,7 +1,8 @@
 <?php
-class Imagem_p{
+class Imagem{
     private $id_i;
     private $nome;
+    private $tipo;
     private $arquivo;
     private $data_i;
 
@@ -20,6 +21,12 @@ class Imagem_p{
     public function setNome($nome){
         $this->nome=$nome;
     }
+    public function getTipo(){
+        return $this->tipo;
+    }
+    public function setTipo($tipo){
+        $this->tipo=$tipo;
+    }
     public function getData_i(){
         return $this->data_i;
     }
@@ -35,7 +42,7 @@ class Imagem_p{
     
     public function __construct() {
         try {
-            include "inc/conexao.inc.php";
+            include __DIR__ . "/../inc/conexao.inc.php";
     
             $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -50,11 +57,12 @@ class Imagem_p{
         try{
         
              $sql = " INSERT INTO imagem " .
-                " (nome,arquivo,data_i) " . 
-                " VALUES (:nome, :arquivo, NOW())";
+                " (nome,tipo,arquivo,data_i) " . 
+                " VALUES (:nome, :tipo, :arquivo, NOW())";
                             
             $this->stmt= $this->conn->prepare($sql);
             $this->stmt->bindValue(':nome', $this->nome, PDO::PARAM_STR);    
+            $this->stmt->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);    
             $this->stmt->bindValue(':arquivo', $this->arquivo, PDO::PARAM_STR);           
 
             if($this->stmt->execute()){

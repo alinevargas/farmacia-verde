@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Max-Age: 604800");
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			echo json_encode($array);
 			break;
 		case 'receita':
-			include_once "classes/receita.class.php";
+			include_once "../classes/receita.class.php";
 			$receita = new Receita();
 			$array=$receita->mostrar2();
 	

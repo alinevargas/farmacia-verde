@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css"href="estilo.css">
-
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <style>
 .fixed{
 	color:#799E68;
@@ -28,11 +28,11 @@
 <nav class="navbar navbar-expand-lg navbar-light " style="margin-top:0px;">
     
       <div class="navbar-header">
-      <a class="navbar-brand" href=".'/index.php">
+      <a class="navbar-brand" href="">
         <img class="logomenu"src="imagens/logo.png" alt="Logo"/>
        
-          <a href="" class="farmacia">Farmácia Verde </a>
-          <a href="" class="farmacia" >Cuidado Natural </a>
+          <a href="index.php" class="farmacia">Farmácia Verde </a>
+          <a href="index.php" class="farmacia" >Cuidado Natural </a>
        
       </a>  
         <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse"data-target="#navbar" >
@@ -52,7 +52,7 @@
             <a style='text-decoration:none;'class='fixed'href='catalogo_eventos.php'>Eventos </a>  
           </li>
           <?php     
-            session_start();
+            @session_start();
               if(isset($_COOKIE["logado"] ) ){ 
                 if($_COOKIE["tipo"]=="c"){
                   echo"<li class='nav-item active'>

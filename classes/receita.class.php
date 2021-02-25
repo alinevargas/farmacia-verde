@@ -1,10 +1,10 @@
 <?php 
 class Receita{
-    private $id_r;
-    private $nome;
-	private $ingredientes;
-    private $descricao;
-    private $link;
+    public $id_r;
+    public $nome;
+	public $ingredientes;
+    public $descricao;
+    public $link;
 
     private $conn;
     private $stmt; 
@@ -42,7 +42,7 @@ class Receita{
 
     public function __construct() {
         try {
-            include "inc/conexao.inc.php";
+            include __DIR__ . "/../inc/conexao.inc.php";
            
             $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

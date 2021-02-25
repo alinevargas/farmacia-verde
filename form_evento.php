@@ -1,9 +1,7 @@
 ﻿<?php
 	include_once 'inc/menu.php';
 ?>
-<script src="js/jquery.js"> </script>
-<script src="js/jquery.mask.min.js"> </script>
-<script src="js/form_evento.js"> </script>	
+
 	<p class="titulo2 align">Cadastro de Evento</p>
 	<div class="fundo1 align ">
 		<div class="planta">		
@@ -29,10 +27,13 @@
 					<label>Final:</label>
 					<input type="text" name="fim" id="fim" value="<?= isset($eve) ? $eve->getFim() : ""; ?>"><br>
 					<label>Descrição:</label>
-					<input type="text" name="descricao" id="descricao" value="<?= isset($eve) ? $eve->getDescricao() : ""; ?>"><br>
+					<textarea type="text" name="descricao" id="descricao" value="<?= isset($eve) ? $eve->getDescricao() : ""; ?>"></textarea><br>
 					<button type="submit" class="botao">Cadastrar</button>
 				</div>	
 			</form>
+			<script src="js/jquery.js"> </script>
+			<script src="js/jquery.mask.min.js"> </script>
+			<script src="js/form_evento.js"> </script>	
 		</div>
 	</div>
 </body>

@@ -3,12 +3,12 @@ class In_planta{
     private $in;
     private $comum ;
     private $id_d ;
-    private $Id_p ;
+    private $id_p ;
     
     private $conn;
     private $stmt;
     
-	public function getnI(){
+	public function getIn(){
        return $this->in;
    }
    public function setIn($in){
@@ -35,7 +35,7 @@ class In_planta{
     
    public function __construct() {
     try {
-        include "inc/conexao.inc.php";
+        include __DIR__ . "/../inc/conexao.inc.php";
 
         $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -92,7 +92,7 @@ class In_planta{
             return $retorno;
                 
     }
-    public function excluirb(){
+    public function excluird(){
         $retorno = false;
         try{
             $sql = " DELETE FROM in_planta " .

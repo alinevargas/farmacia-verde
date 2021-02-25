@@ -1,9 +1,9 @@
 <?php
     class Planta{
-	private $id_p;
-	private $comum;
-	private $cientifico;
-    private $contra;
+        public $id_p;
+        public $comum;
+        public $cientifico;
+        public $contra;
     
     private $conn;
     private $stmt;
@@ -35,7 +35,7 @@
    
    public function __construct() {
         try {
-            include "inc/conexao.inc.php";
+            include __DIR__ . "/../inc/conexao.inc.php";
            
             $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -110,7 +110,7 @@
 
         $plantas = array();  
         try{          
-            $sql = " SELECT id_p,comum FROM planta " ;
+            $sql = " SELECT id_p,comum FROM planta "; 
 
             $this->stmt= $this->conn->prepare($sql); 
             

@@ -36,7 +36,7 @@ class In_recei{
 
    public function __construct() {
     try {
-        include "inc/conexao.inc.php";
+        include __DIR__ . "/../inc/conexao.inc.php";
 
         $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -57,8 +57,8 @@ class In_recei{
             $id = $arr["id_r"];
          
              $sql = " INSERT INTO in_recei " .
-                " (id_r,id_d) " . 
-                " VALUES (:id_r, :in)";
+                " (id_d,id_r) " . 
+                " VALUES (:in, :id_r)";
                         
             $this->stmt= $this->conn->prepare($sql);
             $this->stmt->bindValue(':in', $this->in, PDO::PARAM_INT);
@@ -84,7 +84,7 @@ class In_recei{
             $id = $arr["id_r"];
          
             $sql =  " UPDATE in_recei SET "  .
-            " id_r = :id_r, id_d = :in" .            
+            " id_d = :in, id_r = :id_r" .            
                     " WHERE id_r = :id_r ";    
                         
             $this->stmt= $this->conn->prepare($sql);

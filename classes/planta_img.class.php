@@ -1,7 +1,9 @@
 <?php
-class planta_img{
-    private $Id_p ;
-    private $Id_i ;
+class Planta_img{
+    private $id_p ;
+    private $id_i ;
+    private $nome;
+    private $item;
     
     private $conn;
     private $stmt;
@@ -18,10 +20,21 @@ class planta_img{
     public function setId_i($id_i){
          $this->id_i=$id_i;
     }
-    
+    public function getNome(){
+        return $this->nome;
+    }
+    public function setNome($nome){
+         $this->nome=$nome;
+    }
+    public function getItem(){
+        return $this->item;
+    }
+    public function setItem($item){
+         $this->item=$item;
+    }
    public function __construct() {
     try {
-        include "inc/conexao.inc.php";
+        include __DIR__ . "/../inc/conexao.inc.php";
 
         $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,22 +44,24 @@ class planta_img{
         }
     }
 
-    public function adicionarbeneficio(){
+    public function adicionar($item){
+        echo $item;
         $retorno2 = false;
         try{
-            $query = " SELECT id_p  FROM planta  WHERE comum like :comum " ;
+            $query = " SELECT id_i  FROM imagem  WHERE nome like :nome " ;
             $this->stmt= $this->conn->prepare($query);
-            $this->stmt->bindValue(':comum', $this->comum, PDO::PARAM_STR);
+            $this->stmt->bindValue(':nome', $this->nome, PDO::PARAM_STR);
             $this->stmt->execute();
             $arr = $this->stmt->fetch();
-            $id = $arr["id_p"];
-         
+            $id = $arr["id_i"];
+            echo $id;
+            
              $sql = " INSERT INTO planta_img " .
                 " (id_i,id_p) " . 
-                " VALUES (:id_i, :id_p)";
+                " VALUES (:id_i, :?)";
                         
             $this->stmt= $this->conn->prepare($sql);
-            $this->stmt->bindValue(':id_p', $this->id_p, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_p', $item, PDO::PARAM_INT);
             $this->stmt->bindValue(':id_i', $id, PDO::PARAM_INT);            
                    
             if($this->stmt->execute()){

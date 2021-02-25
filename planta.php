@@ -18,9 +18,9 @@
 	<div class="fundo1 align">
 		<div class="planta tamanho"  >
 			<?php
-				include_once 'classes/beneficio.class.php';
+				include_once 'classes/indicacao.class.php';
 				include_once 'classes/imagem.class.php';
-				include_once 'classes/bene_planta.class.php';
+				include_once 'classes/in_planta.class.php';
 
 				$planta= new Planta();
   				$plantas = array();
@@ -38,12 +38,12 @@
 							echo " <p><b>Contradições</b>:" .$pla->getContra()."</p>";
 						}
 						 
-						echo"<p><b> Benefícios: </b>";
-							$bene= new Beneficio();
-							$beneficios= array();
-							$beneficios = $bene->mostrartudo($id);
-							foreach($beneficios as $b){
-								echo $b->getDescricao().", ";
+						echo"<p><b> Indicações: </b>";
+							$ind= new Indicacao();
+							$indicacaos= array();
+							$indicacaos = $ind->mostrartudo($id);
+							foreach($indicacaos as $i){
+								echo $i->getDescricao().", ";
 								}
 						echo"</p><div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
 						<ol class='carousel-indicators'>";

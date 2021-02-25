@@ -1,9 +1,7 @@
 <?php
 	include_once 'inc/menu.php';
 ?>
-<script src="js/jquery.js"> </script>
-<script src="js/jquery.mask.min.js" > </script>
-<script src="js/form_usuario.js"></script>		
+	
 	<p class="titulo2 align">Cadastro de usuarios</p>
 	<div class="fundo1 align ">
 		<div class="planta">		
@@ -48,6 +46,9 @@
 					<button type="submit" class="botao">Cadastrar</button>
 				</div>
 			</form>
+			<script src="js/jquery.js"> </script>
+			<script src="js/jquery.mask.min.js" > </script>
+			<script src="js/form_usuario.js"></script>	
 		</div>
 	</div>
 </body>

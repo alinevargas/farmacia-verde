@@ -8,7 +8,7 @@
 			<table  class="table1 align">
 				<?php
 					include_once 'classes/planta.class.php';
-					include_once 'classes/bene_planta.class.php';
+					include_once 'classes/in_planta.class.php';
 					include_once 'classes/imagem.class.php';
 					
 					$planta = new Planta();

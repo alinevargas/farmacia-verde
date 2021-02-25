@@ -19,19 +19,20 @@
                     <select name="item">
 						<script>src="js/jquery.js" </script>
 						<script>
-							$("#tipo").on('change',function(){
+							$("#tipo").on('change', function() {
+								console.log('dsadsa');
 								$.ajax({
 									method:'POST',
 									url:'js/server.php',
 									data:{
 										tipo: $("#tipo").val()
 									}
-								}).done(function(resposta){
-									console.log(resposta);
-									// Object.entries(resposta).forEach(){
-									// 	$("select").append('<option id=' + id + ' nome=' + id + ' value=' + id + '>' + nome + '</option>');
-									// };
-								}).fail(function(){
+								}).done(function(resposta) {
+									resposta.forEach(function(obj) {
+										console.log(obj);
+										$("select").append('<option id=' + obj.id_p + ' nome=' + obj.id_p + ' value=' + obj.id_p + '>' + obj.comum + '</option>');
+									});
+								}).fail(function() {
 									alert("erro na requisisão");
 								});
 							});

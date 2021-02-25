@@ -1,11 +1,11 @@
 <?php 
 class Evento{
-	private $id_e;
-	private $nome;
-	private $localidade;
-	private $inicio;
-	private $fim;
-    private $descricao;
+	public $id_e;
+	public $nome;
+	public $localidade;
+	public $inicio;
+	public $fim;
+    public $descricao;
     
     private $conn;
     private $stmt;
@@ -48,7 +48,7 @@ class Evento{
    }
    public function __construct() {
     try {
-        include "inc/conexao.inc.php";
+        include __DIR__ . "/../inc/conexao.inc.php";
        
         $this->conn = new PDO("mysql:host=$server; dbname=$database", $user, $password);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
