@@ -42,11 +42,7 @@
                             <a class='botao' href='form_imagem_r.php'>Adicionar imagem</a>
                         </div>"; 
                     foreach($_POST as $key=>$valor){
-<<<<<<< HEAD
-                        if(substr($key,0,10) == "indicacoes"){
-=======
                         if(substr($key,0,2) == "in"){
->>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
                             $in->setIn($_POST[$key]);
                             $in->setNome($_POST["nome"]);
 

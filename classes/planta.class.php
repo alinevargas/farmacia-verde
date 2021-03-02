@@ -110,14 +110,7 @@
 
         $plantas = array();  
         try{          
-<<<<<<< HEAD
             $sql = " SELECT id_p,comum FROM planta "; 
-=======
-            $sql = " SELECT id_p,comum FROM planta "
-             ;
-            echo $sql;
-            die; 
->>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 
             $this->stmt= $this->conn->prepare($sql); 
             

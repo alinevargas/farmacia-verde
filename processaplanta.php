@@ -9,11 +9,7 @@
     include_once "classes/imagem.class.php";
 
     if($_POST){
-<<<<<<< HEAD
            
-=======
-            
->>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
         if(isset($_POST["comum"]) && isset($_POST["cientifico"]) && isset($_POST["contra"]) ){
             
             $planta = new Planta();
