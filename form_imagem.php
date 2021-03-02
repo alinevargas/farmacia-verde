@@ -41,12 +41,6 @@
 									alert("erro na requisisão");
 								});
 							});
-						})//.done(function(resposta){
-							//		console.log(resposta);
-							//		 Object.entries(resposta).forEach(){
-							//		 	$("select").append('<option id=' + id + ' nome=' + id + ' value=' + id + '>' + nome + '</option>');
-							//		 };
-							//	}).fail(function(){
 						</script>
 					</select>
                     <label >Selecione a imagem:</label>
