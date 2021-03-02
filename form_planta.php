@@ -1,5 +1,10 @@
 ﻿<?php
 	include_once 'inc/menu.php';
+
+	@session_start();
+	  if(!isset($_COOKIE["logado"] ) ){ 
+		echo '<script>history.back()</script>';
+		}
 ?>
 		
 	<p class="titulo2 align">Cadastro de plantas</p>

@@ -1,5 +1,10 @@
 <?php 
 	include_once "inc/menu.php";
+
+	@session_start();
+	  if(!isset($_COOKIE["logado"] ) ){ 
+		echo '<script>history.back()</script>';
+		}
 ?>
 	<p class="titulo2 align">Cadastro de Imagem</p>
 	<div class="fundo1 align ">
@@ -27,12 +32,21 @@
 									data:{
 										tipo: $("#tipo").val()
 									}
+<<<<<<< HEAD
 								}).done(function(resposta) {
 									resposta.forEach(function(obj) {
 										console.log(obj);
 										$("select").append('<option id=' + obj.id_p + ' nome=' + obj.id_p + ' value=' + obj.id_p + '>' + obj.comum + '</option>');
 									});
 								}).fail(function() {
+=======
+								}).done(function(resposta){
+									console.log(resposta);
+									 Object.entries(resposta).forEach(){
+									 	$("select").append('<option id=' + id + ' nome=' + id + ' value=' + id + '>' + nome + '</option>');
+									 };
+								}).fail(function(){
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 									alert("erro na requisisão");
 								});
 							});

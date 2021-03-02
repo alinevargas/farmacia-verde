@@ -1,5 +1,9 @@
 ﻿<?php
 	include_once 'inc/menu.php';
+	@session_start();
+	  if(!isset($_COOKIE["logado"] ) ){ 
+		header("location:index.php");
+		}
 ?>
 
 	<p class="titulo2 align">Cadastro de Indicações</p>

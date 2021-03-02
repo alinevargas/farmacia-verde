@@ -1,7 +1,17 @@
 <?php
 	include_once 'inc/menu.php';
+	@session_start();
+	  if(!isset($_COOKIE["logado"] ) ){ 
+		header("location:index.php");
+		}
 ?>
+<<<<<<< HEAD
 
+=======
+<script src="js/jquery.js"> </script>
+<script src="js/jquery.mask.min.js" > </script>
+<script src="js/form_nosario.js"></script>		
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 	<p class="titulo2 align">Sobre nós</p>
 	<div class="fundo1 align ">
 		<div class="planta">		
@@ -42,8 +52,11 @@
                     <button type="submit" class="botao">Cadastrar</button>
 				</div>
 			</form>
+<<<<<<< HEAD
 			<script src="js/jquery.js"> </script>
 			<script src="js/form_sobre_nos.js"></script>		
+=======
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 		</div>
 	</div>
 </body>

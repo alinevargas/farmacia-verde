@@ -1,5 +1,9 @@
 ﻿<?php
 	include_once 'inc/menu.php';
+	@session_start();
+	  if(!isset($_COOKIE["logado"] ) ){ 
+		header("location:index.php");
+		}
 ?>
 
 	</style>
@@ -44,8 +48,13 @@
 								$id= $p->getId_p();
 								$d= $p->getComum();
 							
+<<<<<<< HEAD
 								echo "<label >
 								<input  class='inputcheck' type = 'checkbox' class='form-check-input' name = 'planta".$c."'  id='".$id."' value = ".$id." checked>".$d."
+=======
+								echo "<label class='form-check-label'>
+								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'planta".$c."'  id='".$id."' value = ".$id." checked>".$d."
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 								</label><br>";	
 								$array[$c]=$p->getComum();
 								$c++;
@@ -57,7 +66,7 @@
 									echo "<input class='inputcheck' type = 'checkbox' name = 'planta".$c."'  id='".$idb."' value = ".$idb.">".$db." <br>";	
 									$c++;
 								}
-							}
+					                      		}
 						}else{
 							if(!empty($planta)){
 								foreach($planta as $pp){
@@ -96,7 +105,11 @@
 								$d= $i->getDescricao();
 							
 								echo "<label class='form-check-label'>
+<<<<<<< HEAD
 								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'indicacoes".$c."'  id='".$id."' value = ".$id." checked>".$d."
+=======
+								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'in".$c."'  id='".$id."' value = ".$id." checked>".$d."
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 								</label><br>";	
 								$array[$c]=$i->getDescricao();
 								$c++;
@@ -105,7 +118,11 @@
 								$idb=$in->getId_d();
 								$db=$in->getDescricao();
 								if(array_search($db,$array) == false){
+<<<<<<< HEAD
 									echo "<input class='inputcheck' type = 'checkbox' name = 'indicacoes".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+=======
+									echo "<input class='inputcheck' type = 'checkbox' name = 'in".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+>>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 									$c++;
 								}
 							}
