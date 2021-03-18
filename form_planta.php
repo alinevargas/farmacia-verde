@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	include_once 'inc/menu.php';
 
 	@session_start();
@@ -82,7 +82,32 @@
 				</div>
 			</form>
 			<script src="js/jquery.js"> </script>
-			<script src="js/form_planta.js"></script>
+			<script >
+                $(document).ready(function(){
+ 
+                    $("form").submit(function(){
+                        var comum= $("#comum").val().trim();	
+                        var cientifico= $("#cientifico").val().trim();	
+
+                        if(comum==""){
+                            alert("O campo nome comum é obrigatório");
+                            return false;
+                        }
+                        if(comum.length<3){
+                            alert("O campo nome comum tem que ter no mínimo 3 letras");
+                            return false;
+                        }
+                        if(cientifico==""){
+                            alert("O campo nome cientifico  é obrigatório");
+                            return false;
+                        }
+                        if(cientifico.length<3){
+                            alert("O campo nome cientifico deve ter no mínimo 3 letras");
+                            return false;
+                        }
+                    });
+                });
+            </script>
 		</div>
 	</div>
 </body>

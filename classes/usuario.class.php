@@ -130,13 +130,13 @@ class Usuario{
           }
     }
 
-    public function selecionar($id){
+    public function selecionar($nome){
         try{         
             $sql = " SELECT * FROM usuario " .
-                    " WHERE id_u like :id_u " ;
+                    " WHERE nome like :nome " ;
     
             $this->stmt= $this->conn->prepare($sql);   
-            $this->stmt->bindValue(':id_u', $id, PDO::PARAM_INT);
+            $this->stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
 
             if($this->stmt->execute()){                               
                 $usuario = $this->stmt->fetchAll(PDO::FETCH_CLASS,"usuario");                  

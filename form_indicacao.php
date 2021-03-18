@@ -2,8 +2,9 @@
 	include_once 'inc/menu.php';
 	@session_start();
 	  if(!isset($_COOKIE["logado"] ) ){ 
-		header("location:index.php");
-		}
+		echo '<script>history.back()</script>';
+		exit;
+	  }
 ?>
 
 	<p class="titulo2 align">Cadastro de Indicações</p>
@@ -28,6 +29,25 @@
 					<button type="submit" class="botao">Cadastrar</button>
 				</div>
 			</form>
+			<script src="js/jquery.js"> </script>
+			<script >
+				$(document).ready(function(){
+		
+					$("form").submit(function(){
+					
+						var descricao= $("#descricao").val().trim();
+						
+						if(descricao==""){
+							alert("O campo nome é obrigatório");
+							return false;
+						}
+						if(descricao.length<3){
+						alert("O campo nome tem que ter no mínimo 3 letras");
+							return false;
+						}
+					});
+				});
+			</script>
 		</div>
 	</div>
 </body>

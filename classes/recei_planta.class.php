@@ -72,7 +72,7 @@ class Recei_planta{
             return $retorno2;        
     }
 
-    public function atualizarplantaficio(){
+    public function atualizarplanta(){
         $retorno2 = false;
         try{
             $query = " SELECT id_p  FROM planta  WHERE nome like :nome " ;

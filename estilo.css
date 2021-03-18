@@ -11,7 +11,7 @@ a:hover {
 .header-menu{
     background-color: #1aad72;
     color: #fff;
-    font-size: 18px;
+    font-size: 22px;
 }
 .espaco-topo{
     margin-top: 0px;
@@ -33,20 +33,20 @@ a:hover {
 	color:#799E68;
 	font-weight:bold;
 	font-family:eczar semibold;
-	font-size:20px;
+	font-size:25px;
 }
 .titulo{
 	color:#799E68;
 	font-size:20px;
 	font-weight:bold;
-		font-family:eczar semibold;
+	font-family:eczar semibold;
 	margin-top:5px;
 	margin-bottom:25px;
 }
 form{
 	color:#799E68;
-		font-family:eczar semibold;
-	font-size:16px;
+	font-family:eczar semibold;
+	font-size:20px;
 	font-weight:bold;
 	margin: 0px;
 	min-height: 400px;
@@ -229,8 +229,8 @@ td:hover{
 
 .planta{
 	color: #799E68;
-	font-size:20px;
-		font-family:eczar semibold;
+	font-size:22px;
+	font-family:eczar semibold;
 	min-height: 400px;
 	max-width:390px;
 	min-width:390px;
@@ -263,7 +263,7 @@ td:hover{
 	margin-top:-10px;
 }
 .farmacia{
-	font-size:20px;
+	font-size:22px;
 	color:#799E68;
 	font-family:eczar semibold;
 	text-decoration:none;
@@ -274,7 +274,7 @@ td:hover{
 }
 
 .fundo1{
-	background-color:#80c570;
+	background-color:white;
 	width:100%;
 	min-height: 400px;
 }
@@ -296,4 +296,21 @@ td:hover{
 }
 .texto{
 	font-size:18px;
+}
+.footer{
+	background-color:#799E68;
+	min-height:200px;
+	color:white;
+	font-size:22px;
+} 
+.icon{
+	color:white;
+	margin-left:10px ;
+
+}
+
+.login{
+	
+	justify-content: center;
+	align-items: center;
 }

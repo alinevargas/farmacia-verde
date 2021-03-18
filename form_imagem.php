@@ -1,10 +1,10 @@
 <?php 
 	include_once "inc/menu.php";
-
 	@session_start();
-	  if(!isset($_COOKIE["logado"] ) ){ 
-		header("location:index.php");
-		}
+	if(!isset($_COOKIE["logado"] ) ){ 
+	  echo '<script>history.back()</script>';
+	  exit;
+	}
 ?>
 	<p class="titulo2 align">Cadastro de Imagem</p>
 	<div class="fundo1 align ">

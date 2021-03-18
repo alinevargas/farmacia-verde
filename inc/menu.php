@@ -1,4 +1,3 @@
-﻿<!DOCTYPE>
 <html>
 <head>
   <title> Farmácia Verde </title>
@@ -9,14 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css"href="estilo.css">
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <style>
 .fixed{
 	color:#799E68;
 	text-decoration:none;
 	font-family:eczar semibold;
-  font-size:20px;
+  font-size:22px;
   margin-right:15px;
 }
 .fixed:hover{

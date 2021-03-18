@@ -2,16 +2,10 @@
 	include_once 'inc/menu.php';
 	@session_start();
 	  if(!isset($_COOKIE["logado"] ) ){ 
-		header("location:index.php");
-		}
+		echo '<script>history.back()</script>';
+		exit;
+	  }
 ?>
-<<<<<<< HEAD
-
-=======
-<script src="js/jquery.js"> </script>
-<script src="js/jquery.mask.min.js" > </script>
-<script src="js/form_nosario.js"></script>		
->>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
 	<p class="titulo2 align">Sobre nós</p>
 	<div class="fundo1 align ">
 		<div class="planta">		
@@ -52,11 +46,87 @@
                     <button type="submit" class="botao">Cadastrar</button>
 				</div>
 			</form>
-<<<<<<< HEAD
 			<script src="js/jquery.js"> </script>
-			<script src="js/form_sobre_nos.js"></script>		
-=======
->>>>>>> 590b289f24469c3b9c329b1bf26899898e7764a3
+			<script >
+				$(document).ready(function(){
+		
+					$("form").submit(function(){
+						var lema= $("#lema").val().trim();	
+						var localidade= $("#localidade").val().trim();	
+						var colaboradores= $("#colaboradores").val().trim();	
+						var resumo= $("#resumo").val().trim();	
+						var historia= $("#historia").val().trim();	
+						var email= $("#email").val().trim();	
+						var insta= $("#insta").val().trim();	
+						var youtube= $("#youtube").val().trim();	
+						
+						if(lema==""){
+							alert("O campo lema é obrigatório");
+							return false;
+						}
+						if(lema.length<3){
+							alert("O campo lema tem que ter no mínimo 3 letras");
+							return false;
+						}
+						if(localidade==""){
+							alert("O campo localidade  é obrigatório");
+							return false;
+						}
+						if(localidade.length<3){
+							alert("O campo localidade deve ter no mínimo 3 letras");
+							return false;
+						}
+						if(colaboradores==""){
+							alert("O campo colaboradores é obrigatório");
+							return false;
+						}
+						if(colaboradores.length<3){
+							alert("O campo colaboradores deve ter no mínimo 3 letras");
+							return false;
+						}
+						if(resumo==""){
+							alert("O campo resumo é obrigatório");
+							return false;
+						}
+						if(resumo.length<3){
+							alert("O campo resumo tem que ter no mínimo 3 letras");
+							return false;
+						}
+						if(historia==""){
+							alert("O campo historia  é obrigatório");
+							return false;
+						}
+						if(historia.length<3){
+							alert("O campo historia deve ter no mínimo 3 letras");
+							return false;
+						}
+						if(email==""){
+							alert("O campo email é obrigatório");
+							return false;
+						}
+						if(email.length<3){
+							alert("O campo email deve ter no mínimo 3 letras");
+							return false;
+						}
+						if(insta==""){
+							alert("O campo insta é obrigatório");
+							return false;
+						}
+						if(insta.length<3){
+							alert("O campo insta tem que ter no mínimo 3 letras");
+							return false;
+						}
+						if(youtube==""){
+							alert("O campo youtube  é obrigatório");
+							return false;
+						}
+						if(youtube.length<3){
+							alert("O campo youtube deve ter no mínimo 3 letras");
+							return false;
+						}
+					});
+				});
+			</script>		
 		</div>
 	</div>
 </body>

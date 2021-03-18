@@ -1,9 +1,11 @@
 ﻿<?php
 	include_once 'inc/menu.php';
 	@session_start();
-	  if(!isset($_COOKIE["logado"] ) ){ 
-		header("location:index.php");
-		}
+	@session_start();
+	if(!isset($_COOKIE["logado"] ) ){ 
+	  echo '<script>history.back()</script>';
+	  exit;
+	}
 ?>
 
 	</style>
@@ -129,7 +131,41 @@
 				</div>
 			</form>
 			<script src="js/jquery.js"> </script>
-			<script src="js/form_receita.js"></script>
+			<script >
+				$(document).ready(function(){
+		
+					$("form").submit(function(){
+						var nome= $("#nome").val().trim();	
+						var ingredientes= $("#ingredientes").val().trim();	
+						var descricao= $("#descricao").val();	
+					
+						if(nome==""){
+							alert("O campo nome é obrigatório");
+							return false;
+						}
+						if(nome.length<3){
+							alert("O campo nome tem que ter no mínimo 3 letras");
+							return false;
+						}
+						if(ingredientes==""){
+							alert("O campo ingredientes  é obrigatório");
+							return false;
+						}
+						if(ingredientes.length<3){
+							alert("O campo ingredientes deve ter no mínimo 3 letras");
+							return false;
+						}
+						if(descricao==""){
+							alert("O campo descricao é obrigatório");
+							return false;
+						}
+						if(descricao.length<3){
+							alert("O campo descricao deve ter no mínimo 3 letras");
+							return false;
+						}
+					});
+				});
+			</script>
 		</div>
 	</div>
 </body>
