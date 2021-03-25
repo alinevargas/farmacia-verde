@@ -45,7 +45,7 @@ class Planta_img{
     }
 
     public function adicionar($item){
-        echo $item;
+        
         $retorno2 = false;
         try{
             $query = " SELECT id_i  FROM imagem  WHERE nome like :nome " ;
@@ -54,15 +54,15 @@ class Planta_img{
             $this->stmt->execute();
             $arr = $this->stmt->fetch();
             $id = $arr["id_i"];
-            echo $id;
+            
             
              $sql = " INSERT INTO planta_img " .
                 " (id_i,id_p) " . 
-                " VALUES (:id_i, :?)";
+                " VALUES (:id_i, :id_p)";
                         
             $this->stmt= $this->conn->prepare($sql);
-            $this->stmt->bindValue(':id_p', $item, PDO::PARAM_INT);
-            $this->stmt->bindValue(':id_i', $id, PDO::PARAM_INT);            
+            $this->stmt->bindValue(':id_p', +$item, PDO::PARAM_INT);
+            $this->stmt->bindValue(':id_i', +$id, PDO::PARAM_INT);            
                    
             if($this->stmt->execute()){
                 $retorno = true;

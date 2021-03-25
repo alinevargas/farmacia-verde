@@ -118,16 +118,16 @@ class Evento{
     }
     public function mostrar2(){
 
-        $plantas = array();  
+        $eventos = array();  
         try{          
             $sql = " SELECT id_e,nome FROM evento " ;
 
             $this->stmt= $this->conn->prepare($sql); 
             
             if($this->stmt->execute()){               
-                $plantas = $this->stmt->fetchAll(PDO::FETCH_CLASS,"evento");                  
+                $eventos = $this->stmt->fetchAll(PDO::FETCH_CLASS,"evento");                  
             }                      
-            return $receitas;                     
+            return $eventos;                     
           } catch(PDOException $erro) {
               echo $erro->getMessage();                 
           }

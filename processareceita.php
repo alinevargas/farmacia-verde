@@ -9,7 +9,7 @@
     include_once "classes/recei_planta.class.php";
 
     if($_POST){
-   var_dump($_POST);
+   //var_dump($_POST);
   
         if( isset($_POST["nome"]) && isset($_POST["ingredientes"]) && isset($_POST["descricao"])&& isset($_POST["link"]) ){
             
@@ -20,19 +20,18 @@
             $receita->setIngredientes($_POST["ingredientes"]);
             $receita->setDescricao($_POST["descricao"]);
             $receita->setLink($_POST["link"]);
-
-            $in = new In_recei();
-            $id= $receita->getId_r();
-            $ids= array();
-            $planta= new Recei_planta();
-
-            
+ 
             if(empty($id)){
 
                 $retorno = $receita->adicionar();// receita
             }else{
                 $retorno = $receita->atualizar();
             }
+
+            $in = new In_recei();
+            $id= $receita->getId_r();
+            $ids= array();
+            $planta= new Recei_planta();
 
             if ($retorno === true) { 
                 if(empty($id)){   
@@ -44,7 +43,7 @@
                         </div>"; 
                         
                     foreach($_POST as $key=>$valor){
-                        if(substr($key,0,2) == "in"){
+                        if(substr($key,0,3) == "in_"){
                             $in->setIn($_POST[$key]);
                             $in->setNome($_POST["nome"]); //in_receita
 

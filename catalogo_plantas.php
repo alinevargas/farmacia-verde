@@ -21,9 +21,11 @@
 						foreach ($plantas as $pla) {
 							$comum=$pla->getComum(); 
 
-							// $img = new Imagem();
-							// $imgs = array();
-							// $imgs = $img->selecionar($pla->getId_i());   
+							$planta = new Planta_img();
+							$plantas = array();
+							$plantas = $planta->selecionar($pla->getId_i());   
+
+							$
 							
 							// if (!empty($imgs)) {
 								// foreach ($imgs as $i) {

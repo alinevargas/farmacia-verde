@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			echo json_encode($array);
 			break;
 		case 'receita':
-			include_once "../classes/receita.class.php";
+			include "../classes/receita.class.php";
 			$receita = new Receita();
 			$array=$receita->mostrar2();
 	
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			echo json_encode($retorno);
 			break;		
 		case 'evento':
-			include_once "../classes/evento.class.php";
+			include "../classes/evento.class.php";
 			$evento = new Evento();
 			$array=$evento->mostrar2();
 		

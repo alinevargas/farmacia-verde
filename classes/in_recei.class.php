@@ -55,7 +55,7 @@ class In_recei{
             $this->stmt->execute();
             $arr = $this->stmt->fetch();
             $id = $arr["id_r"];
-         
+            
              $sql = " INSERT INTO in_recei " .
                 " (id_d,id_r) " . 
                 " VALUES (:in, :id_r)";

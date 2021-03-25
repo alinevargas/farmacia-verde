@@ -166,14 +166,14 @@ class Receita{
     }
     public function mostrar2(){
 
-        $plantas = array();  
+        $receitas = array();  
         try{          
             $sql = " SELECT id_r,nome FROM receita " ;
 
             $this->stmt= $this->conn->prepare($sql); 
             
             if($this->stmt->execute()){               
-                $plantas = $this->stmt->fetchAll(PDO::FETCH_CLASS,"receita");                  
+                $receitas = $this->stmt->fetchAll(PDO::FETCH_CLASS,"receita");                  
             }                      
             return $receitas;                     
           } catch(PDOException $erro) {

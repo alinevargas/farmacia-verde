@@ -35,7 +35,16 @@
 								}).done(function(resposta) {
 									resposta.forEach(function(obj) {
 										console.log(obj);
-										$("select").append('<option id=' + obj.id_p + ' nome=' + obj.id_p + ' value=' + obj.id_p + '>' + obj.comum + '</option>');
+										if($("#tipo").val()== "planta"){
+											$("select").append('<option id=' + obj.id_p + ' nome=' + obj.id_p + ' value=' + obj.id_p + '>' + obj.comum + '</option>');
+										
+										}else if( $("#tipo").val()== "receita" ){
+											$("select").append('<option id=' + obj.id_r + ' nome=' + obj.id_r + ' value=' + obj.id_r + '>' + obj.nome + '</option>');
+										
+										}else if($("#tipo").val()== "evento"){
+											$("select").append('<option id=' + obj.id_e + ' nome=' + obj.id_e + ' value=' + obj.id_e + '>' + obj.nome + '</option>');
+
+										}
 									});
 								}).fail(function() {
 									alert("erro na requisisão");

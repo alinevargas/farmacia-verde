@@ -102,7 +102,7 @@
 								$d= $i->getDescricao();
 							
 								echo "<label class='form-check-label'>
-								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'in".$c."'  id='".$id."' value = ".$id." checked>".$d."
+								<input class='inputcheck' type = 'checkbox' class='form-check-input' name = 'in_".$c."'  id='".$id."' value = ".$id." checked>".$d."
 								</label><br>";	
 								$array[$c]=$i->getDescricao();
 								$c++;
@@ -111,7 +111,7 @@
 								$idb=$in->getId_d();
 								$db=$in->getDescricao();
 								if(array_search($db,$array) == false){
-									echo "<input class='inputcheck' type = 'checkbox' name = 'in".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+									echo "<input class='inputcheck' type = 'checkbox' name = 'in_".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
 									$c++;
 								}
 							}
@@ -120,7 +120,7 @@
 								foreach($indicacao as $in){
 									$idb=$in->getId_d();
 									$db=$in->getDescricao();
-									echo "<input class='inputcheck' type = 'checkbox' name = 'in".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
+									echo "<input class='inputcheck' type = 'checkbox' name = 'in_".$c."'  id='".$idb."' value = ".$idb.">".$db."<br>";	
 									$c++;
 								}
 							}
